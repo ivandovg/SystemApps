@@ -31,5 +31,18 @@ namespace SystemApps
 
         [DllImport("user32.dll", EntryPoint = "FindWindow", SetLastError = true)]
         public static extern IntPtr FindWindowByCaption(IntPtr ZeroOnly, string lpWindowName);
+
+
+        public delegate bool CallBackPtr(int hwnd, int lParam);
+        public CallBackPtr callBackPtr;
+
+        [DllImport("user32.dll")]
+        public static extern int EnumWindows(CallBackPtr callPtr, int lPar);
+
+        public static bool Report(int hwnd, int lParam)
+        {
+            Console.WriteLine("WND:\t" + hwnd);
+            return true;
+        }
     }
 }

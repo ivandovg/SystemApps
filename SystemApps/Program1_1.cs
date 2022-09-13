@@ -11,34 +11,37 @@ namespace SystemApps
     {
         static void Main(string[] args)
         {
-            int res = ExtFunctions.MessageBox(IntPtr.Zero, "Hello user!!!", "Test message", 0);
-            Console.WriteLine("You press: " + res.ToString());
-            res = ExtFunctions.MessageBox(IntPtr.Zero, "Hello user!!!", "Test question", ExtFunctions.MB_YESNO | ExtFunctions.MB_ICONQUESTION);
-            Console.WriteLine("You press: " + res.ToString());
+            //int res = ExtFunctions.MessageBox(IntPtr.Zero, "Hello user!!!", "Test message", 0);
+            //Console.WriteLine("You press: " + res.ToString());
+            //res = ExtFunctions.MessageBox(IntPtr.Zero, "Hello user!!!", "Test question", ExtFunctions.MB_YESNO | ExtFunctions.MB_ICONQUESTION);
+            //Console.WriteLine("You press: " + res.ToString());
 
-            Console.Write("\nTest hide window title = ");
-            string title = Console.ReadLine();
-            IntPtr hwnd = ExtFunctions.FindWindowByCaption(IntPtr.Zero, title);
-            if ((hwnd == IntPtr.Zero) || (hwnd == null))
-            {
-                Console.WriteLine("Window not found");
-            }
-            else
-            {
-                ExtFunctions.ShowWindow(hwnd, ExtFunctions.SW_HIDE);
-                Console.WriteLine("Press key for show window");
-                Console.ReadKey();
-                ExtFunctions.ShowWindow(hwnd, ExtFunctions.SW_SHOWMAXIMIZED);
-                Console.WriteLine("Press key for show window");
-                Console.ReadKey();
-                ExtFunctions.ShowWindow(hwnd, ExtFunctions.SW_SHOWMINIMIZED);
-                Console.WriteLine("Press key for show window");
-                Console.ReadKey();
-                ExtFunctions.ShowWindow(hwnd, ExtFunctions.SW_SHOWNORMAL);
-                Console.WriteLine("Press key for show window");
-                Console.ReadKey();
-                ExtFunctions.ShowWindow(hwnd, ExtFunctions.SW_SHOW);
-            }
+            //Console.Write("\nTest hide window title = ");
+            //string title = Console.ReadLine();
+            //IntPtr hwnd = ExtFunctions.FindWindowByCaption(IntPtr.Zero, title);
+            //if ((hwnd == IntPtr.Zero) || (hwnd == null))
+            //{
+            //    Console.WriteLine("Window not found");
+            //}
+            //else
+            //{
+            //    ExtFunctions.ShowWindow(hwnd, ExtFunctions.SW_HIDE);
+            //    Console.WriteLine("Press key for show window");
+            //    Console.ReadKey();
+            //    ExtFunctions.ShowWindow(hwnd, ExtFunctions.SW_SHOWMAXIMIZED);
+            //    Console.WriteLine("Press key for show window");
+            //    Console.ReadKey();
+            //    ExtFunctions.ShowWindow(hwnd, ExtFunctions.SW_SHOWMINIMIZED);
+            //    Console.WriteLine("Press key for show window");
+            //    Console.ReadKey();
+            //    ExtFunctions.ShowWindow(hwnd, ExtFunctions.SW_SHOWNORMAL);
+            //    Console.WriteLine("Press key for show window");
+            //    Console.ReadKey();
+            //    ExtFunctions.ShowWindow(hwnd, ExtFunctions.SW_SHOW);
+            //}
+
+            var callBackPtr = new ExtFunctions.CallBackPtr(ExtFunctions.Report);
+            ExtFunctions.EnumWindows(callBackPtr, 0);
 
             Console.WriteLine("Press any key...");
             Console.ReadKey();
