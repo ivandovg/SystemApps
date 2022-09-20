@@ -16,6 +16,8 @@ namespace SystemApps3_2
         {
             InitializeComponent();
             thread = null;
+            //ThreadPriority state = (ThreadPriority)Enum.Parse(typeof(ThreadPriority), "Normal");
+            //ThreadPriority state = (ThreadPriority)comboBox1.SelectedIndex;
         }
         private Thread thread;
         private void btnStart_Click(object sender, EventArgs e)

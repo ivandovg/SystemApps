@@ -93,6 +93,7 @@ namespace SystemApps4_1
         public delegate int FactorialDelegate(int n);
         static int FactorialInt(int n)
         {
+            Thread.CurrentThread.Name = n.ToString();
             Thread.Sleep(1000);
             Console.WriteLine($"Start Thread #{Thread.CurrentThread.ManagedThreadId}");
             int f = 1;
@@ -101,21 +102,29 @@ namespace SystemApps4_1
                 f *= (i + 1);
                 Thread.Sleep(100);
             }
-            Console.WriteLine($"End Thread #{Thread.CurrentThread.ManagedThreadId}, {n}! = {f}");
+            //Console.WriteLine($"End Thread #{Thread.CurrentThread.ManagedThreadId}, {n}! = {f}");
             return f;
         }
-
         static void FactorialIntCallback(IAsyncResult result)
         {
-            Console.WriteLine("End Callback");
+            FactorialDelegate factorial = result.AsyncState as FactorialDelegate;
+            if (factorial == null)
+                Console.WriteLine($"End Callback, result = null");
+            else
+            {
+                int res = factorial.EndInvoke(result);
+                Console.WriteLine($"End Thread #{Thread.CurrentThread.ManagedThreadId}, {Thread.CurrentThread.Name}! = {res}");
+            }
         }
 
+        static int threadCount = 0;
         static void Test3()
         {
             FactorialDelegate factorial = FactorialInt;
-            for (int i = 0; i < 10; i++)
+            threadCount = 20;
+            for (int i = 0; i < 20; i++)
             {
-                factorial.BeginInvoke(random.Next(4, 10), FactorialIntCallback, null);
+                factorial.BeginInvoke(random.Next(4, 10), FactorialIntCallback, factorial);
             }
         }
         #endregion
