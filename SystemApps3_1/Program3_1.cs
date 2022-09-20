@@ -6,14 +6,14 @@ using System.Threading;
 
 namespace SystemApps3_1
 {
-    class Program
+    class Program3_1
     {
         static Random random = new Random();
         static void Main(string[] args)
         {
-            //Demo1();
+            Demo1();
             //Demo2();
-            Demo3();
+            //Demo3();
 
             Console.WriteLine("\nContinue Main()");
             Console.WriteLine("\npress any key...");
