@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Threading;
 
 namespace SystemApps2_2
 {
@@ -70,8 +71,29 @@ namespace SystemApps2_2
 
             ProcessStartInfo info = new ProcessStartInfo(dlg.FileName);
             Process process = Process.Start(info);
-            MessageBox.Show("Wait...");
-            process.Kill();
+            Thread thread = new Thread(Process_Wait);
+            thread.IsBackground = true;
+            thread.Start(process);
+
+            //process.Exited += Process_Exited;
+            //process.WaitForExit();
+            //MessageBox.Show("Process exit");
+            //try
+            //{
+            //    process.Kill();
+            //} 
+            //catch { }
+        }
+
+        private void Process_Wait(object sender)
+        {
+            Process process = sender as Process;
+            if (process == null)
+                return;
+
+            string name = process.ProcessName;
+            process.WaitForExit();
+            MessageBox.Show($"Process '{name}' exited");
         }
     }
 }
