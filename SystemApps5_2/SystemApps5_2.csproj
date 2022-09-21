@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E565FFF8-71C0-41C9-A5CF-89303DF25EF1}</ProjectGuid>
+    <ProjectGuid>{1A138908-4CB9-475B-BE93-FB215F345AE5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SystemApps5_1</RootNamespace>
-    <AssemblyName>SystemApps5_1</AssemblyName>
+    <RootNamespace>SystemApps5_2</RootNamespace>
+    <AssemblyName>SystemApps5_2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program5_1.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

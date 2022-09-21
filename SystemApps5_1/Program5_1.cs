@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace SystemApps5_1
 {
-    class Program
+    class Program5_1
     {
         static void Main(string[] args)
         {
