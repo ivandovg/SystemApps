@@ -9,7 +9,7 @@ namespace SystemApps5_2
     // Создаем два потока:
     // 1) заполняет массив числами
     // 2) выводит на экран массив и сумму
-    class Program
+    class Program5_2
     {
         static Random random = new Random();
         const string mutexName = "Summ";

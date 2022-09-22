@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1A138908-4CB9-475B-BE93-FB215F345AE5}</ProjectGuid>
+    <ProjectGuid>{84212802-E93D-4F8B-81AF-34834B34BCF7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SystemApps5_2</RootNamespace>
-    <AssemblyName>SystemApps5_2</AssemblyName>
+    <RootNamespace>SystemApps6_1</RootNamespace>
+    <AssemblyName>SystemApps6_1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program5_2.cs" />
+    <Compile Include="Program6_1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
