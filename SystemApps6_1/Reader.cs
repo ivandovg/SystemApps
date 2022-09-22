@@ -11,13 +11,16 @@ namespace SystemApps6_1
         static Semaphore semaphore = new Semaphore(3, 3);
         Thread thread;
         int count = 3;
-        public Reader(int i)
+        public Reader(int i, bool startAtInitial = true)
         {
             thread = new Thread(Read);
+            thread.IsBackground = true;
             thread.Name = "Reader " + i.ToString();
-            thread.Start();
+            if (startAtInitial)
+                thread.Start();
         }
-        public void Read()
+        public void Start() => thread.Start();
+        private void Read()
         {
             while (count>0)
             {

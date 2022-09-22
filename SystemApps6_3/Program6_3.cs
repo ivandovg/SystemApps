@@ -15,7 +15,7 @@ namespace SystemApps6_3
         {
             Console.Title = "Test Event Sync";
             Test1Manual();
-
+            //System.IO.Directory.GetFiles(@"C:\", "*.txt", System.IO.SearchOption.AllDirectories);
             Console.WriteLine("Press ENTER...");
             Console.ReadLine();
         }
