@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemApps6_2", "SystemApps
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemApps6_3", "SystemApps6_3\SystemApps6_3.csproj", "{300D1CBB-067C-4606-A66D-A41BD352BA7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemApps7_1", "SystemApps7_1\SystemApps7_1.csproj", "{0F3EA339-0E69-439B-9452-F8823F8B8416}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{300D1CBB-067C-4606-A66D-A41BD352BA7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{300D1CBB-067C-4606-A66D-A41BD352BA7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{300D1CBB-067C-4606-A66D-A41BD352BA7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F3EA339-0E69-439B-9452-F8823F8B8416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F3EA339-0E69-439B-9452-F8823F8B8416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F3EA339-0E69-439B-9452-F8823F8B8416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F3EA339-0E69-439B-9452-F8823F8B8416}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
